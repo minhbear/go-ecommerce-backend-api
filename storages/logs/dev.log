@@ -1,1 +1,19 @@
 2024-08-08T02:29:23.087+0700	INFO	initialize/run.go:14	Starting Server	{"ok": "success"}
+2024-08-08T13:29:52.216+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-08T13:29:52.304+0700	ERROR	initialize/mysql.go:16	Migrate tables failed	{"error": "Error 3780 (HY000): Referencing column 'user_id' and referenced column 'id' in foreign key constraint 'fk_users_roles_user' are incompatible."}
+github.com/go-ecommerce-backend-api/internal/initialize.checkErrorPanic
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/internal/initialize/mysql.go:16
+github.com/go-ecommerce-backend-api/internal/initialize.migrateTables
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/internal/initialize/mysql.go:52
+github.com/go-ecommerce-backend-api/internal/initialize.InitMysql
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/internal/initialize/mysql.go:34
+github.com/go-ecommerce-backend-api/internal/initialize.Run
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/internal/initialize/run.go:6
+main.main
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/cmd/server/main.go:8
+runtime.main
+	/usr/local/go/src/runtime/proc.go:271
+2024-08-08T13:31:27.378+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-08T13:34:04.746+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-08T13:34:37.608+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-08T13:35:06.391+0700	INFO	initialize/mysql.go:30	Init database connection success
