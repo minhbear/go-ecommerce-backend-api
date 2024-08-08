@@ -2,18 +2,40 @@ package initialize
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/go-ecommerce-backend-api/internal/controller"
-	"github.com/go-ecommerce-backend-api/internal/middleware"
+	"github.com/go-ecommerce-backend-api/global"
+	"github.com/go-ecommerce-backend-api/internal/router"
 )
 
-func InitRouter() *gin.Engine {
-	r := gin.Default()
+func  InitRouter() *gin.Engine {
+	var r *gin.Engine
 
-	r.Use(middleware.AuthMiddleware())
+	if global.Config.Server.Mode == "dev" {
+		gin.SetMode(gin.DebugMode)
+		gin.ForceConsoleColor()
+		r = gin.Default()
+	} else {
+		gin.SetMode(gin.ReleaseMode)
+		r = gin.New()
+	}
 
-	v1 := r.Group("/api/v1")
+	r.Use() // logging
+	r.Use() // cross
+	r.Use() // limit rate
+
+	managerRouter := router.RouterGroupApp.Manager
+	userRouter := router.RouterGroupApp.User
+
+	MainGroup := r.Group("/api/v1")
 	{
-		v1.GET("/user", controller.NewUserController().GetUserID)
+		MainGroup.GET("/health-check")
+	}
+	{
+		userRouter.InitUserRouter(MainGroup)
+		userRouter.InitProductRouter(MainGroup)
+	}
+	{
+		managerRouter.InitAdminRouter(MainGroup)
+		managerRouter.InitUserRouter(MainGroup)
 	}
 
 	return r

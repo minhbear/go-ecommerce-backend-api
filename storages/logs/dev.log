@@ -17,3 +17,27 @@ runtime.main
 2024-08-08T13:34:04.746+0700	INFO	initialize/mysql.go:30	Init database connection success
 2024-08-08T13:34:37.608+0700	INFO	initialize/mysql.go:30	Init database connection success
 2024-08-08T13:35:06.391+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-08T16:44:22.886+0700	ERROR	initialize/mysql.go:16	Init database connection failed	{"error": "dial tcp 127.0.0.1:3306: connect: connection refused"}
+github.com/go-ecommerce-backend-api/internal/initialize.checkErrorPanic
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/internal/initialize/mysql.go:16
+github.com/go-ecommerce-backend-api/internal/initialize.InitMysql
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/internal/initialize/mysql.go:29
+github.com/go-ecommerce-backend-api/internal/initialize.Run
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/internal/initialize/run.go:6
+main.main
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/cmd/server/main.go:8
+runtime.main
+	/usr/local/go/src/runtime/proc.go:271
+2024-08-08T16:44:42.484+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-08T17:12:46.387+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-08T17:12:46.488+0700	INFO	initialize/run.go:19	Listening and serving server on	{"address": ":8002"}
+2024-08-08T17:13:06.181+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-08T17:13:06.282+0700	INFO	initialize/run.go:19	Listening and serving server on	{"address": ":8002"}
+2024-08-08T17:16:20.083+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-08T17:16:20.158+0700	INFO	initialize/redis.go:29	Init Redis success
+2024-08-08T17:16:50.299+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-08T17:16:50.389+0700	INFO	initialize/redis.go:29	Init Redis success
+2024-08-08T17:16:58.165+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-08T17:16:58.247+0700	INFO	initialize/redis.go:29	Init Redis success
+2024-08-08T17:18:08.044+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-08T17:18:08.133+0700	INFO	initialize/redis.go:29	Init Redis success
