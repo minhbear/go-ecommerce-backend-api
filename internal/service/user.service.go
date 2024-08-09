@@ -1,17 +1,28 @@
 package service
 
-import "github.com/go-ecommerce-backend-api/internal/repository"
+import (
+	"github.com/go-ecommerce-backend-api/internal/repository"
+	"github.com/go-ecommerce-backend-api/pkg/response"
+)
 
-type UserService struct {
-	userRepository *repository.UserRepository
+type IUserService interface {
+	Register(email string, password string) int
 }
 
-func NewUserService() *UserService {
-	return &UserService{
-		userRepository: repository.NewUserRepository(),
+type userService struct {
+	userRepository repository.IUserRepository
+}
+
+func NewUserService(userRepository repository.IUserRepository) IUserService {
+	return &userService{
+		userRepository: userRepository,
 	}
 }
 
-func (userService *UserService) GetInfoUser() string {
-	return userService.userRepository.GetInfoUser()
+func (userService *userService) Register(email string, password string) int {
+	if !userService.userRepository.GetUserByEmail(email) {
+		return response.ErrCodeUserHasExit
+	}
+	
+	return response.ErrCodeSuccess
 }
