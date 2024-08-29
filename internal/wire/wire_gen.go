@@ -16,7 +16,8 @@ import (
 
 func InitializeUserController() (*controller.UserController, error) {
 	iUserRepository := repository.NewUserRepository()
-	iUserService := service.NewUserService(iUserRepository)
+	iUserAuthRepository := repository.NewUserAuthRepository()
+	iUserService := service.NewUserService(iUserRepository, iUserAuthRepository)
 	userController := controller.NewUserController(iUserService)
 	return userController, nil
 }

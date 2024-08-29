@@ -41,3 +41,43 @@ runtime.main
 2024-08-08T17:16:58.247+0700	INFO	initialize/redis.go:29	Init Redis success
 2024-08-08T17:18:08.044+0700	INFO	initialize/mysql.go:30	Init database connection success
 2024-08-08T17:18:08.133+0700	INFO	initialize/redis.go:29	Init Redis success
+2024-08-29T13:11:11.873+0700	ERROR	initialize/mysql.go:16	Init database connection failed	{"error": "dial tcp: lookup db: no such host"}
+github.com/go-ecommerce-backend-api/internal/initialize.checkErrorPanic
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/internal/initialize/mysql.go:16
+github.com/go-ecommerce-backend-api/internal/initialize.InitMysql
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/internal/initialize/mysql.go:29
+github.com/go-ecommerce-backend-api/internal/initialize.Run
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/internal/initialize/run.go:6
+main.main
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/cmd/server/main.go:8
+runtime.main
+	/usr/local/go/src/runtime/proc.go:271
+2024-08-29T13:11:29.670+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-29T13:11:29.751+0700	INFO	initialize/redis.go:29	Init Redis success
+2024-08-29T13:12:09.430+0700	INFO	initialize/mysql.go:30	Init database connection success
+2024-08-29T13:12:09.498+0700	INFO	initialize/redis.go:29	Init Redis success
+2024-08-29T13:13:20.686+0700	ERROR	send_to/send_to.go:52	Error sending email	{"error": "dial tcp :0: connect: can't assign requested address"}
+github.com/go-ecommerce-backend-api/pkg/utils/send_to.SendTextEmailOtp
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/pkg/utils/send_to/send_to.go:52
+github.com/go-ecommerce-backend-api/internal/service.(*userService).Register
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/internal/service/user.service.go:52
+github.com/go-ecommerce-backend-api/internal/controller.(*UserController).Register
+	/Users/minhnguyen/Documents/Learning/go/github.com/go-ecommerce-backend-api/internal/controller/user.controller.go:20
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/minhnguyen/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	/Users/minhnguyen/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/minhnguyen/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.LoggerWithConfig.func1
+	/Users/minhnguyen/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/logger.go:249
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/minhnguyen/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/context.go:185
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/minhnguyen/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/minhnguyen/go/pkg/mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589
+net/http.serverHandler.ServeHTTP
+	/usr/local/go/src/net/http/server.go:3137
+net/http.(*conn).serve
+	/usr/local/go/src/net/http/server.go:2039

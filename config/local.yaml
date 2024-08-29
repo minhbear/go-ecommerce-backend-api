@@ -1,6 +1,11 @@
 server:
   port: 8002
   mode: "dev"
+smtp:
+  host: ""
+  port: ""
+  username: ""
+  password: ""
 mysql:
   host: 127.0.0.1
   port: 3306
@@ -18,7 +23,7 @@ logger:
   MaxAge:     28
   Compress:   true
 redis:
-  addr: 127.0.0.1:6379
+  addr: 127.0.0.1:6380
   password: ""
   db: 0
   poolSize: 10 
